@@ -1,6 +1,11 @@
 System Health Monitor Dashboard
 A Flask-based web application that monitors and displays your system's health status in real time. It shows live CPU usage, RAM, disk usage, network activity, battery status, and allows pinging other devices on the network (IPv4/IPv6 supported).
 
+netsh advfirewall firewall add rule name="Allow ICMPv4-In" protocol=icmpv4:8,any dir=in action=allow
+ipconfig
+pip install flask psutil
+app.run(debug=True, port=5001)
+
 🔧 Features
 📊 Live graphs for:
 CPU usage
@@ -32,11 +37,6 @@ Edit
 ├── app.py                  # Flask backend
 ├── requirements.txt        # Dependencies
 ├── 📁 templates/
-
-netsh advfirewall firewall add rule name="Allow ICMPv4-In" protocol=icmpv4:8,any dir=in action=allow
-ipconfig
-pip install flask psutil
-app.run(debug=True, port=5001)
 │   └── index.html          # UI frontend
 ├── 📁 static/
 │   ├── style.css           # Styling
