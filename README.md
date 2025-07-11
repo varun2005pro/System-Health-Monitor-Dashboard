@@ -32,6 +32,11 @@ Edit
 ├── app.py                  # Flask backend
 ├── requirements.txt        # Dependencies
 ├── 📁 templates/
+
+netsh advfirewall firewall add rule name="Allow ICMPv4-In" protocol=icmpv4:8,any dir=in action=allow
+ipconfig
+pip install flask psutil
+app.run(debug=True, port=5001)
 │   └── index.html          # UI frontend
 ├── 📁 static/
 │   ├── style.css           # Styling
